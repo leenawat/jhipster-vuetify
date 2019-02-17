@@ -26,11 +26,11 @@
     "testFrameworks": ["protractor"],
     "jhiPrefix": "jhi",
     "clientPackageManager": "npm",
-    "blueprint": "generator-jhipster-vuejs",
+    "blueprint": "generator-jhipster-vuetify",
     "clientFramework": "vue",
     "useSass": false
   },
-  "generator-jhipster-vuejs": {
+  "generator-jhipster-vuetify": {
     "applicationType": "monolith",
     "baseName": "jhipster",
     "clientFramework": "vue",

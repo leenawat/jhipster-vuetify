@@ -84,7 +84,7 @@ before_install:
 # Install JHipster and generate project+entities
 #----------------------------------------------------------------------
 install:
-  - $TRAVIS_BUILD_DIR/test-integration/scripts/10-install-jhipster-vuejs.sh
+  - $TRAVIS_BUILD_DIR/test-integration/scripts/10-install-jhipster-vuetify.sh
   - $JHI_SCRIPTS/11-generate-entities.sh
   - $TRAVIS_BUILD_DIR/test-integration/scripts/12-generate-project-vuejs.sh
   - $JHI_SCRIPTS/13-replace-version-generated-project.sh

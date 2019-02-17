@@ -32,9 +32,9 @@
     "jhiPrefix": "jhi",
     "clientPackageManager": "npm",
     "nativeLanguage": "en",
-    "blueprint": "generator-jhipster-vuejs"
+    "blueprint": "generator-jhipster-vuetify"
   },
-  "generator-jhipster-vuejs": {
+  "generator-jhipster-vuetify": {
     "jhipsterVersion": "5.5.0",
     "applicationType": "gateway",
     "baseName": "test2",

@@ -1,7 +1,7 @@
-# JHipster-vuejs
+# JHipster-vuetify
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Downloads][npmcharts-image]][npmcharts-url]
 > ## ⚠️ Status: in development
-> JHipster-vuejs, a Vue.js blueprint for JHipster. It will use [Vue.js](https://vuejs.org/) as the frontend library. Check out our latest beta release `1.0.0-beta.0` to try this out. 
+> JHipster-vuetify, a Vue.js blueprint for JHipster. It will use [Vue.js](https://vuejs.org/) as the frontend library. Check out our latest beta release `1.0.0-beta.0` to try this out. 
 
 <div align="center">
   <a href="http://www.jhipster.tech/">
@@ -30,13 +30,13 @@ As this is a [JHipster](http://www.jhipster.tech/) blueprint, we expect you have
 To install this blueprint:
 
 ```bash
-npm install -g generator-jhipster-vuejs@1.0.0-beta.0
+npm install -g generator-jhipster-vuetify@1.0.0-beta.0
 ```
 
 To update this blueprint:
 
 ```bash
-npm update -g generator-jhipster-vuejs
+npm update -g generator-jhipster-vuetify
 ```
 
 ## With Yarn
@@ -44,13 +44,13 @@ npm update -g generator-jhipster-vuejs
 To install this blueprint:
 
 ```bash
-yarn global add generator-jhipster-vuejs@1.0.0-beta.0
+yarn global add generator-jhipster-vuetify@1.0.0-beta.0
 ```
 
 To update this blueprint:
 
 ```bash
-yarn global upgrade generator-jhipster-vuejs
+yarn global upgrade generator-jhipster-vuetify
 ```
 
 # Usage
@@ -78,12 +78,12 @@ You'll probably need the current master of **generator-jhipster** :
 - `npm ci`
 - `npm link`
 
-Then, about **jhipster-vuejs** :
+Then, about **jhipster-vuetify** :
 
-- fork jhipster-vuejs: `https://github.com/jhipster/jhipster-vuejs/fork`
-- clone locally your fork: `git clone https://github.com/<your_username>/jhipster-vuejs`
-- `cd jhipster-vuejs`
-- `git remote add upstream https://github.com/jhipster/jhipster-vuejs`
+- fork jhipster-vuetify: `https://github.com/jhipster/jhipster-vuetify/fork`
+- clone locally your fork: `git clone https://github.com/<your_username>/jhipster-vuetify`
+- `cd jhipster-vuetify`
+- `git remote add upstream https://github.com/jhipster/jhipster-vuetify`
 - so you'll be able to update regularly your fork, using `git fetch upstream && git checkout master && git rebase upstream/master`
 - `npm ci`
 - `npm link`
@@ -95,7 +95,7 @@ Then, about **jhipster-vuejs** :
 ```bash
 mkdir my-app
 cd my-app
-npm link generator-jhipster-vuejs
+npm link generator-jhipster-vuetify
 jhipster -d --blueprint vuejs
 ```
 
@@ -104,11 +104,11 @@ jhipster -d --blueprint vuejs
 Apache-2.0 © [Deepu K Sasidharan](https://deepu.js.org)
 
 
-[npm-image]: https://img.shields.io/npm/v/generator-jhipster-vuejs.svg
-[npm-url]: https://npmjs.org/package/generator-jhipster-vuejs
-[travis-image]: https://travis-ci.com/jhipster/jhipster-vuejs.svg?branch=master
-[travis-url]: https://travis-ci.com/jhipster/jhipster-vuejs
-[daviddm-image]: https://david-dm.org/jhipster/jhipster-vuejs.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/jhipster/jhipster-vuejs
-[npmcharts-image]: https://img.shields.io/npm/dm/generator-jhipster-vuejs.svg?label=Downloads&style=flat
-[npmcharts-url]: https://npmcharts.com/compare/generator-jhipster-vuejs
+[npm-image]: https://img.shields.io/npm/v/generator-jhipster-vuetify.svg
+[npm-url]: https://npmjs.org/package/generator-jhipster-vuetify
+[travis-image]: https://travis-ci.com/jhipster/jhipster-vuetify.svg?branch=master
+[travis-url]: https://travis-ci.com/jhipster/jhipster-vuetify
+[daviddm-image]: https://david-dm.org/jhipster/jhipster-vuetify.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/jhipster/jhipster-vuetify
+[npmcharts-image]: https://img.shields.io/npm/dm/generator-jhipster-vuetify.svg?label=Downloads&style=flat
+[npmcharts-url]: https://npmcharts.com/compare/generator-jhipster-vuetify
