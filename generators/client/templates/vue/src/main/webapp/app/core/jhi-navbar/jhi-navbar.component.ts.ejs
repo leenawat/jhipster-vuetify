@@ -17,6 +17,7 @@ export default class JhiNavbar extends Vue {
   public version = VERSION ? 'v' + VERSION : '';
   private currentLanguage = this.$store.getters.currentLanguage;
   private languages: any = this.$store.getters.languages;
+  private isNavbarCollapsed: boolean = false;
 
   created() {
     <%_ if (enableTranslation) { _%>
@@ -31,6 +32,9 @@ export default class JhiNavbar extends Vue {
     })
   }
 
+  public toogleDrawer(): void {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
 
   <%_ if (enableTranslation) { _%>
   public changeLanguage(newLanguage: string) : void {

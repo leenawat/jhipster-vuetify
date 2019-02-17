@@ -106,7 +106,7 @@ const vueFiles = {
         {
             condition: generator => generator.useSass,
             path: MAIN_SRC_DIR,
-            templates: ['content/scss/_bootstrap-variables.scss', 'content/scss/global.scss', 'content/scss/vendor.scss']
+            templates: ['content/scss/_vuetify-variables.scss', 'content/scss/global.scss', 'content/scss/vendor.scss']
         },
         {
             condition: generator => generator.useSass && generator.enableI18nRTL,
@@ -144,6 +144,7 @@ const vueFiles = {
                 'shared/config/axios-interceptor.ts',
                 'shared/config/config.ts',
                 'shared/config/config-bootstrap-vue.ts',
+                'shared/config/config-vuetify.ts',
                 'router/index.ts'
             ]
         }
@@ -178,6 +179,7 @@ const vueFiles = {
                 'shared/data/data-utils.service.ts',
                 'shared/jhi-item-count.component.ts',
                 'shared/jhi-item-count.vue',
+                'shared/validation/vuelidate-vuetify.mixin.ts',
                 'shared/model/user.model.ts'
             ]
         }

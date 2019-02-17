@@ -1,23 +1,19 @@
 <template>
-  <div id="app">
-    <ribbon></ribbon>
-    <div id="app-header">
+  <v-app id="inspire">
+      <ribbon></ribbon>
       <jhi-navbar></jhi-navbar>
-    </div>
-    <div class="container-fluid">
-      <div class="card jh-card">
-        <router-view></router-view>
-      </div>
-      <%_ if (authenticationType !== 'oauth2') { _%>
-      <b-modal id="login-page" hide-footer lazy>
-        <span slot="modal-title" id="login-title" v-text="$t('login.title')">Sign in</span>
-        <login-form></login-form>
-      </b-modal>
-      <%_ } %>
+      <v-content>
+          <v-container fluid>
+          <v-slide-y-transition mode="out-in">
+              <router-view></router-view>
+          </v-slide-y-transition>
+          </v-container>
+      </v-content>
       <jhi-footer></jhi-footer>
-    </div>
-  </div>
+      <%_ if (authenticationType !== 'oauth2') { _%>
+      <login-form></login-form>
+      <%_ } %>
+  </v-app>
 </template>
-
 <script lang="ts" src="./app.component.ts">
 </script>
