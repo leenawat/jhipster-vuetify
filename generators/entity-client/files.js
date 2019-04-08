@@ -35,7 +35,7 @@ const vueFiles = {
             path: VUE_DIR,
             templates: [
                 {
-                    file: 'entities/entity-details.vue',
+                    file: 'entities/entity-details.vuetify',
                     renameTo: generator => `entities/${generator.entityFolderName}/${generator.entityFileName}-details.vue`
                 },
                 {
@@ -43,7 +43,7 @@ const vueFiles = {
                     renameTo: generator => `entities/${generator.entityFolderName}/${generator.entityFileName}-details.component.ts`
                 },
                 {
-                    file: 'entities/entity-update.vue',
+                    file: 'entities/entity-update.vuetify',
                     renameTo: generator => `entities/${generator.entityFolderName}/${generator.entityFileName}-update.vue`
                 },
                 {
@@ -51,7 +51,7 @@ const vueFiles = {
                     renameTo: generator => `entities/${generator.entityFolderName}/${generator.entityFileName}-update.component.ts`
                 },
                 {
-                    file: 'entities/entity.vue',
+                    file: 'entities/entity.vuetify',
                     renameTo: generator => `entities/${generator.entityFolderName}/${generator.entityFileName}.vue`
                 },
                 {
