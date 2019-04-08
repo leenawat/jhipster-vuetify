@@ -167,7 +167,7 @@ const vueFiles = {
                 'core/home/home.component.ts',
                 'core/error/error.vue',
                 'core/error/error.component.ts',
-                'core/jhi-footer/jhi-footer.vue',
+                'core/jhi-footer/jhi-footer.vuetify',
                 'core/jhi-footer/jhi-footer.component.ts',
                 'core/jhi-navbar/jhi-navbar.vue',
                 'core/jhi-navbar/jhi-navbar.component.ts',

@@ -4,6 +4,7 @@ import { Component,<% if (!fieldsContainBlob) { %> Vue,<% } %> Inject } from 'vu
   import JhiDataUtils from '@/shared/data/data-utils.service';
 <% } %>
 import { numeric, required, minLength, maxLength } from 'vuelidate/lib/validators';
+import VuelidateVuetifyMixin from '@/shared/validation/vuelidate-vuetify.mixin';
 <%_
     let include = false;
     for (idx in fields) {
@@ -68,7 +69,8 @@ const validations: any = {
 };
 
 @Component({
-  validations
+  validations,
+  mixins: [VuelidateVuetifyMixin]
 })
 export default class <%= entityAngularName %>Update extends <% if (fieldsContainBlob) { %>mixins(JhiDataUtils)<% } else { %>Vue<% } %> {
   @Inject('alertService') private alertService: () => AlertService;
