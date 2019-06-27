@@ -27,7 +27,7 @@ describe('Subgenerator languages of Vue.js JHipster blueprint', () => {
                         .withGenerators([
                             [
                                 require('../generators/languages/index.js'), // eslint-disable-line global-require
-                                'jhipster-vuejs:languages',
+                                'jhipster-vuetify:languages',
                                 path.join(__dirname, '../generators/languages/index.js')
                             ]
                         ])
