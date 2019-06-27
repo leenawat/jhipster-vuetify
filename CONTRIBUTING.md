@@ -21,7 +21,7 @@ If you have a question on using JHipster, or if you need help with your JHipster
 
 ## <a name="issue"></a> Issues and Bugs
 
-If you find a bug in the source code or a mistake in the documentation, you can help us by [submitting a ticket](https://opensource.guide/how-to-contribute/#opening-an-issue) to our [GitHub issues](https://github.com/jhipster/jhipster-vuejs/issues). Even better, you can submit a Pull Request to our [JHipster generator project](https://github.com/jhipster/jhipster-vuejs) or to our [Documentation project](https://github.com/jhipster/jhipster.github.io).
+If you find a bug in the source code or a mistake in the documentation, you can help us by [submitting a ticket](https://opensource.guide/how-to-contribute/#opening-an-issue) to our [GitHub issues](https://github.com/jhipster/jhipster-vuetify/issues). Even better, you can submit a Pull Request to our [JHipster generator project](https://github.com/jhipster/jhipster-vuetify) or to our [Documentation project](https://github.com/jhipster/jhipster.github.io).
 
 **Please see the Submission Guidelines below**.
 
@@ -31,7 +31,7 @@ If you submitted a Pull Request that fixes a ticket with the "$100" tag, then yo
 
 ## <a name="feature"></a> Feature Requests
 
-You can request a new feature by submitting a ticket to our [GitHub issues](https://github.com/jhipster/jhipster-vuejs/issues). If you
+You can request a new feature by submitting a ticket to our [GitHub issues](https://github.com/jhipster/jhipster-vuetify/issues). If you
 would like to implement a new feature then consider what kind of change it is:
 
 -   **Major Changes** that you wish to contribute to the project should be discussed first. Please open a ticket which clearly states that it is a feature request in the title and explain clearly what you want to achieve in the description, and the JHipster team will discuss with you what should be done in that ticket. You can then start working on a Pull Request.
@@ -41,7 +41,7 @@ would like to implement a new feature then consider what kind of change it is:
 
 ### [Submitting an Issue](https://opensource.guide/how-to-contribute/#opening-an-issue)
 
-Before you submit your issue search the [archive](https://github.com/jhipster/jhipster-vuejs/issues?utf8=%E2%9C%93&q=is%3Aissue), maybe your question was already answered.
+Before you submit your issue search the [archive](https://github.com/jhipster/jhipster-vuetify/issues?utf8=%E2%9C%93&q=is%3Aissue), maybe your question was already answered.
 
 If your issue appears to be a bug, and has not been reported, open a new issue.
 Help us to maximize the effort we can spend fixing issues and adding new
@@ -72,7 +72,7 @@ Issues opened without any of these info will be **closed** without any explanati
 
 Before you submit your pull request consider the following guidelines:
 
--   Search [GitHub](https://github.com/jhipster/jhipster-vuejs/pulls?utf8=%E2%9C%93&q=is%3Apr) for an open or closed Pull Request
+-   Search [GitHub](https://github.com/jhipster/jhipster-vuetify/pulls?utf8=%E2%9C%93&q=is%3Apr) for an open or closed Pull Request
     that relates to your submission.
 -   If you want to modify the JHipster generator, read our [Generator development setup](#setup)
 -   Make your changes in a new git branch
@@ -112,7 +112,7 @@ Before you submit your pull request consider the following guidelines:
     git push origin my-fix-branch
     ```
 
--   In GitHub, send a pull request to `jhipster/jhipster-vuejs:master`.
+-   In GitHub, send a pull request to `jhipster/jhipster-vuetify:master`.
 -   If we suggest changes then
 
     -   Make the required updates.
@@ -192,26 +192,26 @@ JHipster is a [Yeoman Generator](http://yeoman.io/), so you must follow the [Yeo
 
 Here are the most important steps.
 
-### Fork the jhipster-vuejs project
+### Fork the jhipster-vuetify project
 
-Go to the [jhipster-vuejs project](https://github.com/jhipster/jhipster-vuejs) and click on the "fork" button. You can then clone your own fork of the project, and start working on it.
+Go to the [jhipster-vuetify project](https://github.com/jhipster/jhipster-vuetify) and click on the "fork" button. You can then clone your own fork of the project, and start working on it.
 
 [Please read the GitHub forking documentation for more information](https://help.github.com/articles/fork-a-repo)
 
 ### Set NPM/YARN to use the cloned project
 
-In your cloned `jhipster-vuejs` project, type `npm link` or `yarn && yarn link` depending on the package manager you use.
+In your cloned `jhipster-vuetify` project, type `npm link` or `yarn && yarn link` depending on the package manager you use.
 
 This will do a symbolic link from the global `node_modules` version to point to this folder, so when we run `jhipster --blueprint vuejs`, you will now use the development version of JHipster.
 
 For testing, you will want to generate an application, and there is a specific issue here: for each application, JHipster installs a local version of itself. This is made to enable several applications to each use a specific JHipster version (application A uses JHipster 3.1.0, and application B uses JHipster 3.2.0).
 
-To overcome this you need to run `npm link generator-jhipster-vuejs` or `yarn link generator-jhipster-vuejs` on the generated project folder as well, so that the local version has a symbolic link to the development version of JHipster.
+To overcome this you need to run `npm link generator-jhipster-vuetify` or `yarn link generator-jhipster-vuetify` on the generated project folder as well, so that the local version has a symbolic link to the development version of JHipster.
 
 To put it in a nutshell, you need to:
 
-1.  run `npm link` or `yarn link` on the `generator-jhipster-vuejs` project
-2.  run `npm link generator-jhipster-vuejs` or `yarn link generator-jhipster-vuejs` on the generated application folder (you need to do this for each application you create)
+1.  run `npm link` or `yarn link` on the `generator-jhipster-vuetify` project
+2.  run `npm link generator-jhipster-vuetify` or `yarn link generator-jhipster-vuetify` on the generated application folder (you need to do this for each application you create)
 
 Now, running the 'jhipster' command should run your locally installed JHipster version directly from sources. Check that the symbolic link is correct with the following command :
 
@@ -345,5 +345,5 @@ see http://spring.io/blog/2014/09/26/spring-boot-1-1-7-released
 Fix #1234
 ```
 
-[issue-template]: https://github.com/jhipster/jhipster-vuejs/issues/new?template=BUG_REPORT.md
-[feature-template]: https://github.com/jhipster/jhipster-vuejs/issues/new?template=FEATURE_REQUEST.md
+[issue-template]: https://github.com/jhipster/jhipster-vuetify/issues/new?template=BUG_REPORT.md
+[feature-template]: https://github.com/jhipster/jhipster-vuetify/issues/new?template=FEATURE_REQUEST.md

@@ -29,10 +29,10 @@
     "jhiPrefix": "jhi",
     "clientPackageManager": "npm",
     "nativeLanguage": "en",
-    "blueprint": "generator-jhipster-vuejs",
+    "blueprint": "generator-jhipster-vuetify",
     "clientFramework": "vue"
   },
-  "generator-jhipster-vuejs": {
+  "generator-jhipster-vuetify": {
     "applicationType": "monolith",
     "baseName": "jhipster",
     "clientFramework": "vue",

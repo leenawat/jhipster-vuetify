@@ -231,12 +231,12 @@ describe('Vue.js JHipster blueprint', () => {
                 .withGenerators([
                     [
                         require('../generators/client/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:client',
+                        'jhipster-vuetify:client',
                         path.join(__dirname, '../generators/client/index.js')
                     ],
                     [
                         require('../generators/common/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:common',
+                        'jhipster-vuetify:common',
                         path.join(__dirname, '../generators/common/index.js')
                     ]
                 ])
@@ -270,7 +270,7 @@ describe('Vue.js JHipster blueprint', () => {
             assert.file(expectedFiles.webpack);
         });
         it('contains the specific change added by the blueprint', () => {
-            assert.fileContent('package.json', `"generator-jhipster-vuejs": "${blueprintPackagejs.version}"`);
+            assert.fileContent('package.json', `"generator-jhipster-vuetify": "${blueprintPackagejs.version}"`);
             assert.fileContent('package.json', '"vue"');
             assert.fileContent('package.json', '"vuex"');
             assert.fileContent('package.json', '"vuelidate"');
@@ -301,12 +301,12 @@ describe('Vue.js JHipster blueprint', () => {
                 .withGenerators([
                     [
                         require('../generators/client/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:client',
+                        'jhipster-vuetify:client',
                         path.join(__dirname, '../generators/client/index.js')
                     ],
                     [
                         require('../generators/common/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:common',
+                        'jhipster-vuetify:common',
                         path.join(__dirname, '../generators/common/index.js')
                     ]
                 ])
@@ -340,7 +340,7 @@ describe('Vue.js JHipster blueprint', () => {
             assert.file(expectedFiles.webpack);
         });
         it('contains the specific change added by the blueprint', () => {
-            assert.fileContent('package.json', `"generator-jhipster-vuejs": "${blueprintPackagejs.version}"`);
+            assert.fileContent('package.json', `"generator-jhipster-vuetify": "${blueprintPackagejs.version}"`);
             assert.fileContent('package.json', '"vue"');
             assert.fileContent('package.json', '"vuex"');
             assert.fileContent('package.json', '"vuelidate"');
@@ -371,12 +371,12 @@ describe('Vue.js JHipster blueprint', () => {
                 .withGenerators([
                     [
                         require('../generators/client/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:client',
+                        'jhipster-vuetify:client',
                         path.join(__dirname, '../generators/client/index.js')
                     ],
                     [
                         require('../generators/common/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:common',
+                        'jhipster-vuetify:common',
                         path.join(__dirname, '../generators/common/index.js')
                     ]
                 ])
@@ -409,7 +409,7 @@ describe('Vue.js JHipster blueprint', () => {
             assert.file(expectedFiles.webpack);
         });
         it('contains the specific change added by the blueprint', () => {
-            assert.fileContent('package.json', `"generator-jhipster-vuejs": "${blueprintPackagejs.version}"`);
+            assert.fileContent('package.json', `"generator-jhipster-vuetify": "${blueprintPackagejs.version}"`);
             assert.fileContent('package.json', '"vue"');
             assert.fileContent('package.json', '"vuex"');
             assert.fileContent('package.json', '"vuelidate"');
@@ -440,12 +440,12 @@ describe('Vue.js JHipster blueprint', () => {
                 .withGenerators([
                     [
                         require('../generators/client/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:client',
+                        'jhipster-vuetify:client',
                         path.join(__dirname, '../generators/client/index.js')
                     ],
                     [
                         require('../generators/common/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:common',
+                        'jhipster-vuetify:common',
                         path.join(__dirname, '../generators/common/index.js')
                     ]
                 ])
@@ -478,7 +478,7 @@ describe('Vue.js JHipster blueprint', () => {
             assert.file(expectedFiles.webpack);
         });
         it('contains the specific change added by the blueprint', () => {
-            assert.fileContent('package.json', `"generator-jhipster-vuejs": "${blueprintPackagejs.version}"`);
+            assert.fileContent('package.json', `"generator-jhipster-vuetify": "${blueprintPackagejs.version}"`);
             assert.fileContent('package.json', '"vue"');
             assert.fileContent('package.json', '"vuex"');
             assert.fileContent('package.json', '"vuelidate"');
@@ -509,12 +509,12 @@ describe('Vue.js JHipster blueprint', () => {
                 .withGenerators([
                     [
                         require('../generators/client/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:client',
+                        'jhipster-vuetify:client',
                         path.join(__dirname, '../generators/client/index.js')
                     ],
                     [
                         require('../generators/common/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:common',
+                        'jhipster-vuetify:common',
                         path.join(__dirname, '../generators/common/index.js')
                     ]
                 ])
@@ -550,7 +550,7 @@ describe('Vue.js JHipster blueprint', () => {
             assert.file(expectedFiles.webpack);
         });
         it('contains the specific change added by the blueprint', () => {
-            assert.fileContent('package.json', `"generator-jhipster-vuejs": "${blueprintPackagejs.version}"`);
+            assert.fileContent('package.json', `"generator-jhipster-vuetify": "${blueprintPackagejs.version}"`);
             assert.fileContent('package.json', '"vue"');
             assert.fileContent('package.json', '"vuex"');
             assert.fileContent('package.json', '"vuelidate"');
@@ -581,12 +581,12 @@ describe('Vue.js JHipster blueprint', () => {
                 .withGenerators([
                     [
                         require('../generators/client/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:client',
+                        'jhipster-vuetify:client',
                         path.join(__dirname, '../generators/client/index.js')
                     ],
                     [
                         require('../generators/common/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:common',
+                        'jhipster-vuetify:common',
                         path.join(__dirname, '../generators/common/index.js')
                     ]
                 ])
@@ -623,7 +623,7 @@ describe('Vue.js JHipster blueprint', () => {
             assert.file(expectedFiles.webpack);
         });
         it('contains the specific change added by the blueprint', () => {
-            assert.fileContent('package.json', `"generator-jhipster-vuejs": "${blueprintPackagejs.version}"`);
+            assert.fileContent('package.json', `"generator-jhipster-vuetify": "${blueprintPackagejs.version}"`);
             assert.fileContent('package.json', '"vue"');
             assert.fileContent('package.json', '"vuex"');
             assert.fileContent('package.json', '"vuelidate"');
@@ -654,12 +654,12 @@ describe('Vue.js JHipster blueprint', () => {
                 .withGenerators([
                     [
                         require('../generators/client/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:client',
+                        'jhipster-vuetify:client',
                         path.join(__dirname, '../generators/client/index.js')
                     ],
                     [
                         require('../generators/common/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:common',
+                        'jhipster-vuetify:common',
                         path.join(__dirname, '../generators/common/index.js')
                     ]
                 ])
@@ -693,7 +693,7 @@ describe('Vue.js JHipster blueprint', () => {
             assert.file(expectedFiles.webpack);
         });
         it('contains the specific change added by the blueprint', () => {
-            assert.fileContent('package.json', `"generator-jhipster-vuejs": "${blueprintPackagejs.version}"`);
+            assert.fileContent('package.json', `"generator-jhipster-vuetify": "${blueprintPackagejs.version}"`);
             assert.fileContent('package.json', '"vue"');
             assert.fileContent('package.json', '"vuex"');
             assert.fileContent('package.json', '"vuelidate"');
@@ -724,12 +724,12 @@ describe('Vue.js JHipster blueprint', () => {
                 .withGenerators([
                     [
                         require('../generators/client/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:client',
+                        'jhipster-vuetify:client',
                         path.join(__dirname, '../generators/client/index.js')
                     ],
                     [
                         require('../generators/common/index.js'), // eslint-disable-line global-require
-                        'jhipster-vuejs:common',
+                        'jhipster-vuetify:common',
                         path.join(__dirname, '../generators/common/index.js')
                     ]
                 ])
@@ -763,7 +763,7 @@ describe('Vue.js JHipster blueprint', () => {
             assert.file(expectedFiles.webpack);
         });
         it('contains the specific change added by the blueprint', () => {
-            assert.fileContent('package.json', `"generator-jhipster-vuejs": "${blueprintPackagejs.version}"`);
+            assert.fileContent('package.json', `"generator-jhipster-vuetify": "${blueprintPackagejs.version}"`);
             assert.fileContent('package.json', '"vue"');
             assert.fileContent('package.json', '"vuex"');
             assert.fileContent('package.json', '"vuelidate"');
