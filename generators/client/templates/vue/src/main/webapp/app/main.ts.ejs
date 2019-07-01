@@ -6,7 +6,7 @@ import App from './app.vue';
 import Vue2Filters from 'vue2-filters'
 import router from './router';
 import * as config from './shared/config/config';
-import * as bootstrapVueConfig from './shared/config/config-bootstrap-vue';
+import vuetify from '@/shared/config/vuetify';
 import JhiItemCountComponent from './shared/jhi-item-count.vue';
 <%_ if ((databaseType !== 'no' || authenticationType === 'uaa') && databaseType !== 'cassandra') { _%>
 import AuditsService from './admin/audits/audits.service';
