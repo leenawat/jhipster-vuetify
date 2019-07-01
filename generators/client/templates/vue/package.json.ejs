@@ -37,6 +37,8 @@ limitations under the License.
     "bootswatch": "4.3.1",
     <%_ } _%>
     "date-fns": "2.0.0-beta.2",
+    "deepmerge": "^3.3.0",
+    "fibers": "^4.0.1",    
     "swagger-ui": "2.2.10",
     <%_ if (websocket === 'spring-websocket') { _%>
     "sockjs-client": "1.1.4",
@@ -50,9 +52,16 @@ limitations under the License.
     "vue-router": "3.0.7",
     "vue2-filters": "0.6.0",
     "vuelidate": "0.7.4",
+<<<<<<< HEAD
     "vuex": "3.1.1"
+=======
+    "vuetify": "^2.0.0-beta.4",
+    "vuex": "3.1.1"
+>>>>>>> stash
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@mdi/font": "^3.7.95",
 <%_ if (protractorTests) { _%>
     "@types/chai": "4.1.7",
     "@types/chai-string": "1.4.1",
@@ -96,6 +105,7 @@ limitations under the License.
     <%_ if (!skipCommitHook) { _%>
     "lint-staged": "8.1.4",
     <%_ } _%>
+    "material-design-icons-iconfont": "^5.0.1",
     "merge-jsons-webpack-plugin": "1.0.18",
 <%_ if (protractorTests) { _%>
     "mocha": "6.0.2",

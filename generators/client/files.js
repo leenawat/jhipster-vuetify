@@ -124,7 +124,7 @@ const vueFiles = {
         {
             path: VUE_DIR,
             templates: [
-                'app.vue',
+                'app.vuetify',
                 'app.component.ts',
                 'shims-vue.d.ts',
                 'constants.ts',
@@ -132,6 +132,7 @@ const vueFiles = {
                 'shared/config/axios-interceptor.ts',
                 'shared/config/config.ts',
                 'shared/config/config-bootstrap-vue.ts',
+                'shared/config/vuetify.js',
                 'router/index.ts'
             ]
         }
@@ -150,22 +151,23 @@ const vueFiles = {
         {
             path: VUE_DIR,
             templates: [
-                'core/home/home.vue',
+                'core/home/home.vuetify',
                 'core/home/home.component.ts',
-                'core/error/error.vue',
+                'core/error/error.vuetify',
                 'core/error/error.component.ts',
-                'core/jhi-footer/jhi-footer.vue',
+                'core/jhi-footer/jhi-footer.vuetify',
                 'core/jhi-footer/jhi-footer.component.ts',
-                'core/jhi-navbar/jhi-navbar.vue',
+                'core/jhi-navbar/jhi-navbar.vuetify',
                 'core/jhi-navbar/jhi-navbar.component.ts',
-                'core/ribbon/ribbon.vue',
+                'core/ribbon/ribbon.vuetify',
                 'core/ribbon/ribbon.component.ts',
                 'shared/date/filters.ts',
                 'shared/sort/sorts.ts',
                 'shared/alert/alert.service.ts',
                 'shared/data/data-utils.service.ts',
                 'shared/jhi-item-count.component.ts',
-                'shared/jhi-item-count.vue',
+                'shared/jhi-item-count.vuetify',
+                'shared/validation/vuelidate-vuetify.mixin.ts',
                 'shared/model/user.model.ts'
             ]
         }
@@ -195,22 +197,22 @@ const vueFiles = {
                 'account/register/register.vue',
                 'account/register/register.component.ts',
                 'account/register/register.service.ts',
-                'account/reset-password/init/reset-password-init.vue',
+                'account/reset-password/init/reset-password-init.vuetify',
                 'account/reset-password/init/reset-password-init.component.ts',
-                'account/reset-password/finish/reset-password-finish.vue',
+                'account/reset-password/finish/reset-password-finish.vuetify',
                 'account/reset-password/finish/reset-password-finish.component.ts',
-                'account/settings/settings.vue',
+                'account/settings/settings.vuetify',
                 'account/settings/settings.component.ts',
                 'account/activate/activate.component.ts',
                 'account/activate/activate.service.ts',
-                'account/activate/activate.vue'
+                'account/activate/activate.vuetify'
             ]
         },
         {
             condition: generator => generator.authenticationType === 'session' && !this.skipUserManagement,
             path: VUE_DIR,
             templates: [
-                'account/sessions/sessions.vue',
+                'account/sessions/sessions.vuetify',
                 'account/sessions/sessions.component.ts'
             ]
         },
@@ -227,23 +229,23 @@ const vueFiles = {
             path: VUE_DIR,
             templates: [
                 // admin modules
-                'admin/configuration/configuration.vue',
+                'admin/configuration/configuration.vuetify',
                 'admin/configuration/configuration.component.ts',
                 'admin/configuration/configuration.service.ts',
-                'admin/docs/docs.vue',
+                'admin/docs/docs.vuetify',
                 'admin/docs/docs.component.ts',
-                'admin/health/health.vue',
+                'admin/health/health.vuetify',
                 'admin/health/health.component.ts',
-                'admin/health/health-modal.vue',
+                'admin/health/health-modal.vuetify',
                 'admin/health/health-modal.component.ts',
                 'admin/health/health.service.ts',
-                'admin/logs/logs.vue',
+                'admin/logs/logs.vuetify',
                 'admin/logs/logs.component.ts',
                 'admin/logs/logs.service.ts',
                 'admin/metrics/metrics.vue',
                 'admin/metrics/metrics.component.ts',
                 'admin/metrics/metrics.service.ts',
-                'admin/metrics/metrics-modal.vue',
+                'admin/metrics/metrics-modal.vuetify',
                 'admin/metrics/metrics-modal.component.ts'
             ]
         },
@@ -260,7 +262,7 @@ const vueFiles = {
             condition: generator => generator.websocket === 'spring-websocket',
             path: VUE_DIR,
             templates: [
-                'admin/tracker/tracker.vue',
+                'admin/tracker/tracker.vuetify',
                 'admin/tracker/tracker.component.ts',
                 'admin/tracker/tracker.service.ts'
             ]
@@ -269,11 +271,11 @@ const vueFiles = {
             condition: generator => !generator.skipUserManagement,
             path: VUE_DIR,
             templates: [
-                'admin/user-management/user-management.vue',
+                'admin/user-management/user-management.vuetify',
                 'admin/user-management/user-management.component.ts',
-                'admin/user-management/user-management-view.vue',
+                'admin/user-management/user-management-view.vuetify',
                 'admin/user-management/user-management-view.component.ts',
-                'admin/user-management/user-management-edit.vue',
+                'admin/user-management/user-management-edit.vuetify',
                 'admin/user-management/user-management-edit.component.ts',
                 'admin/user-management/user-management.service.ts'
             ]
@@ -282,7 +284,7 @@ const vueFiles = {
             condition: generator => generator.applicationType === 'gateway' && generator.serviceDiscoveryType,
             path: VUE_DIR,
             templates: [
-                'admin/gateway/gateway.vue',
+                'admin/gateway/gateway.vuetify',
                 'admin/gateway/gateway.component.ts',
                 'admin/gateway/gateway.service.ts'
             ]
@@ -471,10 +473,10 @@ function writeFiles() {
             utils.replaceTranslation(this, ['app/account/sessions/sessions.vue']);
         }
         if (this.applicationType === 'gateway' && this.serviceDiscoveryType) {
-            utils.replaceTranslation(this, ['app/admin/gateway/gateway.vue']);
+            utils.replaceTranslation(this, ['app/admin/gateway/gateway.vuetify']);
         }
         if (this.websocket === 'spring-websocket') {
-            utils.replaceTranslation(this, ['app/admin/tracker/tracker.vue']);
+            utils.replaceTranslation(this, ['app/admin/tracker/tracker.vuetify']);
         }
     }
 }
