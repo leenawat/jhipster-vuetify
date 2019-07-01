@@ -58,7 +58,7 @@ yarn global upgrade generator-jhipster-vuetify
 To use this blueprint, run 
 
 ```bash
-jhipster --blueprint vuejs
+jhipster --blueprint vuetify
 ```
 
 
