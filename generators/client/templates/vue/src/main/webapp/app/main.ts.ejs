@@ -36,7 +36,6 @@ import TrackerService from './admin/tracker/tracker.service';
 Vue.config.productionTip = false;
 config.initVueApp(Vue);
 config.initFortAwesome(Vue);
-bootstrapVueConfig.initBootstrapVue(Vue);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('jhi-item-count', JhiItemCountComponent);
 
@@ -79,6 +78,7 @@ new Vue({
   el: '#app',
   components: { App },
   template: '<App/>',
+  vuetify,
   router,
   provide: {
     loginService: () => loginService,
