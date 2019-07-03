@@ -24,7 +24,8 @@
 
   <v-data-table :items="<% if (pagination !== 'no') { %>orderBy(<%= entityInstancePlural %>, propOrder, reverse === true ? 1 : -1)<% } else {%><%= entityInstancePlural %><% } %>"
     <% if (pagination === 'no') { %>hide-actions<% } else { %>:total-items="totalItems" :pagination.sync="pagination"<% } %> class="elevation-1">
-    <template slot="headers" slot-scope="props">
+    <template v-slot:header="{props}">
+        <tr>
         <th<% if (pagination !== 'no') { %> v-on:click="changeOrder('id')"<% } %>><span v-text="$t('global.field.id')">ID</span><% if (pagination !== 'no') { %> <font-awesome-icon icon="sort"></font-awesome-icon><% } %></th>
         <%_ for (idx in fields) { _%>
         <th<% if (pagination !== 'no') { %> v-on:click="changeOrder('<%= fields[idx].fieldName%>')"<% } %>><span v-text="$t('<%=`${i18nKeyPrefix}.${fields[idx].fieldName}` %>')"><%= fields[idx].fieldNameHumanized %></span><% if (pagination !== 'no') { %> <font-awesome-icon icon="sort"></font-awesome-icon><% } %></th>
@@ -38,9 +39,11 @@
             <%_ } _%>
         <%_ } _%>
         <th></th>
+        </tr>
     </template>  
-    <template slot="items" slot-scope="items">
-        <td><router-link :to="{name: '<%= entityAngularName %>View', params: {<%= entityInstance %>Id: items.item.id}}">{{items.item.id}}</router-link></td>
+    <template v-slot:item="{item}">
+        <tr>
+        <td><router-link :to="{name: '<%= entityAngularName %>View', params: {<%= entityInstance %>Id: item.id}}">{{item.id}}</router-link></td>
 
         <%_ for (idx in fields) {
             const fieldName = fields[idx].fieldName;
@@ -49,22 +52,22 @@
             const fieldTypeBlobContent = fields[idx].fieldTypeBlobContent; _%>
             <%_ if (['byte[]', 'ByteBuffer'].includes(fieldType) && fieldTypeBlobContent === 'image') { _%>
         <td>
-            <a v-if="items.item.<%= fieldName %>" v-on:click="openFile(items.item.<%= fieldName %>ContentType, items.item.<%= fieldName %>)">
+            <a v-if="item.<%= fieldName %>" v-on:click="openFile(item.<%= fieldName %>ContentType, item.<%= fieldName %>)">
                 <img v-bind:src="'data:' + <%=entityInstance %>.<%=fieldName%>ContentType + ';base64,' + <%=entityInstance %>.<%=fieldName%>" style="max-height: 30px;" alt="<%=entityInstance %> image"/>
             </a>
-            <span v-if="items.item.<%= fieldName %>">{{items.item.<%= fieldName %>ContentType}}, {{byteSize(items.item.<%= fieldName %>)}}</span>
+            <span v-if="item.<%= fieldName %>">{{item.<%= fieldName %>ContentType}}, {{byteSize(item.<%= fieldName %>)}}</span>
         </td>
             <%_ } else if (['byte[]', 'ByteBuffer'].includes(fieldType) && fieldTypeBlobContent === 'any') { _%>
         <td>
-            <a v-if="items.item.<%= fieldName %>" v-on:click="openFile(items.item.<%= fieldName %>ContentType, items.item.<%= fieldName %>)" v-text="$t('entity.action.open')">open</a>
-            <span v-if="items.item.<%= fieldName %>">{{items.item.<%= fieldName %>ContentType}}, {{byteSize(items.item.<%= fieldName %>)}}</span>
+            <a v-if="item.<%= fieldName %>" v-on:click="openFile(item.<%= fieldName %>ContentType, item.<%= fieldName %>)" v-text="$t('entity.action.open')">open</a>
+            <span v-if="item.<%= fieldName %>">{{item.<%= fieldName %>ContentType}}, {{byteSize(item.<%= fieldName %>)}}</span>
         </td>
             <%_ } else if (fields[idx].fieldIsEnum) { _%>
-        <td v-text="$t('<%= angularAppName %>.<%= fieldType %>.' + items.item.<%= fieldName %>)">{{items.item.<%= fieldName %>}}</td>
+        <td v-text="$t('<%= angularAppName %>.<%= fieldType %>.' + item.<%= fieldName %>)">{{item.<%= fieldName %>}}</td>
             <%_ } else if (['Instant', 'ZonedDateTime'].includes(fieldType)) { _%>
-        <td>{{items.item.<%=fieldName%> | formatDate}}</td>
+        <td>{{item.<%=fieldName%> | formatDate}}</td>
             <%_ } else { _%>
-        <td>{{items.item.<%=fieldName%>}}</td>
+        <td>{{item.<%=fieldName%>}}</td>
             <%_ } _%>
         <%_ } _%>
         <%_ for (idx in relationships) {
@@ -84,29 +87,29 @@
         <td>
                 <%_ if (otherEntityName === 'user') { _%>
                     <%_ if (relationshipType === 'many-to-many') { _%>
-            <span v-for="(<%= relationshipFieldName %>, i) in items.item.<%= relationshipFieldNamePlural %>" :key="<%= relationshipFieldName %>.id">{{i > 0 ? ', ' : ''}}
+            <span v-for="(<%= relationshipFieldName %>, i) in item.<%= relationshipFieldNamePlural %>" :key="<%= relationshipFieldName %>.id">{{i > 0 ? ', ' : ''}}
                 {{<%= relationshipFieldName %>.<%= otherEntityField %>}}
             </span>
                     <%_ } else { _%>
                         <%_ if (dto === 'no') { _%>
-            {{<%= "items.item." + relationshipFieldName %> ? <%= "items.item." + relationshipFieldName + "." + otherEntityField%> : ''}}
+            {{<%= "item." + relationshipFieldName %> ? <%= "item." + relationshipFieldName + "." + otherEntityField%> : ''}}
                         <%_ } else { _%>
-            {{<%= "items.item." + relationshipFieldName + otherEntityFieldCapitalized %>}}
+            {{<%= "item." + relationshipFieldName + otherEntityFieldCapitalized %>}}
                         <%_ } _%>
                     <%_ } _%>
                 <%_ } else { _%>
                     <%_ if (relationshipType === 'many-to-many') { _%>
-            <span v-for="(<%= relationshipFieldName %>, i) in items.item.<%= relationshipFieldNamePlural %>" :key="<%= relationshipFieldName %>.id">{{i > 0 ? ', ' : ''}}
+            <span v-for="(<%= relationshipFieldName %>, i) in item.<%= relationshipFieldNamePlural %>" :key="<%= relationshipFieldName %>.id">{{i > 0 ? ', ' : ''}}
                 <router-link class="form-control-static" :to="{name: '<%= otherEntityAngularName %>View', params: {<%= relationshipFieldName %>Id: <%= relationshipFieldName %>.id}}">{{<%= relationshipFieldName + "." + otherEntityField %>}}</router-link>
             </span>
                     <%_ } else { _%>
                         <%_ if (dto === 'no') { _%>
-            <div v-if="<%= "items.item." + relationshipFieldName %>">
-                <router-link :to="{name: '<%= otherEntityAngularName %>View', params: {<%= relationshipFieldName %>Id: <%= "items.item." + relationshipFieldName %>.id}}">{{<%= "items.item." + relationshipFieldName + "." + otherEntityField %>}}</router-link>
+            <div v-if="<%= "item." + relationshipFieldName %>">
+                <router-link :to="{name: '<%= otherEntityAngularName %>View', params: {<%= relationshipFieldName %>Id: <%= "item." + relationshipFieldName %>.id}}">{{<%= "item." + relationshipFieldName + "." + otherEntityField %>}}</router-link>
             </div>
                         <%_ } else { _%>
-            <div v-if="<%= "items.item." + relationshipFieldName + "Id" %>">
-                <router-link :to="{name: '<%= otherEntityAngularName %>View', params: {<%= relationshipFieldName %>Id: <%= "items.item." + relationshipFieldName + "Id" %>}}">{{<%= "items.item." + relationshipFieldName + otherEntityFieldCapitalized %>}}</router-link>
+            <div v-if="<%= "item." + relationshipFieldName + "Id" %>">
+                <router-link :to="{name: '<%= otherEntityAngularName %>View', params: {<%= relationshipFieldName %>Id: <%= "item." + relationshipFieldName + "Id" %>}}">{{<%= "item." + relationshipFieldName + otherEntityFieldCapitalized %>}}</router-link>
             </div>
                         <%_ } _%>
                     <%_ } _%>
@@ -116,10 +119,11 @@
         <%_ } _%>
 
         <td class="text-xs-right">
-            <v-icon small color="indigo" @click="$router.push({name: '<%= entityAngularName %>View', params: {<%= entityInstance %>Id: items.item.id}})">visibility</v-icon>            
-            <v-icon small color="green" @click="$router.push({name: '<%= entityAngularName %>Edit', params: {<%= entityInstance %>Id: items.item.id}})">edit</v-icon>            
-            <v-icon small color="red" @click="prepareRemove(items.item)">delete</v-icon>            
+            <v-icon small color="indigo" @click="$router.push({name: '<%= entityAngularName %>View', params: {<%= entityInstance %>Id: item.id}})">visibility</v-icon>            
+            <v-icon small color="green" @click="$router.push({name: '<%= entityAngularName %>Edit', params: {<%= entityInstance %>Id: item.id}})">edit</v-icon>            
+            <v-icon small color="red" @click="prepareRemove(item)">delete</v-icon>            
         </td>
+        </tr>
     </template>
   </v-data-table>
 
